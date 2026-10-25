@@ -1,0 +1,17 @@
+trigger:
+  - develop
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    jobs:
+     - job: CompileCode
+       steps:
+        -   script: echo "my first steps !"
+
+  - stage: Deploy
+    jobs:
+      - job: DeployToServer
+        steps:
+          - script: echo "Deploying to production"
