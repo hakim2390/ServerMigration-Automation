@@ -1,0 +1,10 @@
+parameters:
+  - name: environment
+    type: string
+    default: 'Dev'
+
+jobs:
+- job: CompileCode
+  steps:
+   - script: echo "Building standard architecture for ${{ parameters.environment }}"
+    displayName: 'Build for environment'
